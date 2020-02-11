@@ -9,6 +9,9 @@ def load_messages(f_name):
     messages = f.readlines()
     f.close()
 
+    for m in range(len(messages)):
+        messages[m] = messages[m].split('\n')[0]
+
     return messages
 
 timers = []
