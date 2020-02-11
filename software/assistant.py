@@ -59,7 +59,7 @@ def talk(audio):
         tts = gTTS(text=line, lang='en-au', )
         tts.save('audio.mp3')
         playsound('audio.mp3')
-        os.remove('.audio.mp3')
+        os.remove('audio.mp3')
 
 # Parse the command from microphone input
 def getCommand():
