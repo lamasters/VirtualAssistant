@@ -13,10 +13,10 @@ def load_messages(f_name):
 
 timers = []
 
-err_msg = load_messages('VirtualAssistant\\error_messages.txt')
-greetings = load_messages('VirtualAssistant\\greetings.txt')
-shopping_list = load_messages('VirtualAssistant\\shopping_list.txt')
-wake_words = load_messages('VirtualAssistant\\wake_words.txt')
+err_msg = load_messages('error_messages.txt')
+greetings = load_messages('greetings.txt')
+shopping_list = load_messages('shopping_list.txt')
+wake_words = load_messages('wake_words.txt')
 
 # Search the phrase on wikipedia
 def search(text):
@@ -57,9 +57,9 @@ def talk(audio):
 
     for line in audio.splitlines():
         tts = gTTS(text=line, lang='en-au', )
-        tts.save('VirtualAssistant\\audio.mp3')
-        playsound('VirtualAssistant\\audio.mp3')
-        os.remove('VirtualAssistant\\audio.mp3')
+        tts.save('audio.mp3')
+        playsound('audio.mp3')
+        os.remove('.audio.mp3')
 
 # Parse the command from microphone input
 def getCommand():
@@ -145,7 +145,7 @@ while True:
     while t < len(timers):
         timer = timers[t]
         if ctime - timer[0] > timer[1]:
-            playsound('VirtualAssistant\\alarm.mp3')
+            playsound('alarm.mp3')
             timers.pop(t)
             t -= 1
         t += 1
