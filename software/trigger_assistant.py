@@ -65,7 +65,6 @@ def assistant(command):
         print('No wake word')
         return
     else:
-      os.system("googlesamples-assistant-pushtotalk")
       time.sleep(0.3)
       keyboard.press(Key.enter)
 
